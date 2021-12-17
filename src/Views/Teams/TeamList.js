@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Teams from '../../Components/TeamFunction/Teams';
+import { Link } from 'react-router-dom';
+// import Teams from '../../Components/TeamFunction/Teams';
 import { fetchTeams } from '../../services/teamsRoutes';
 
 export default function TeamList() {
@@ -9,8 +10,6 @@ export default function TeamList() {
     const fetchData = async () => {
       const data = await fetchTeams();
       setTeams(data);
-      console.log(data);
-      console.log(teams);
     };
     fetchData();
   }, []);
@@ -18,10 +17,15 @@ export default function TeamList() {
   return (
     <div>
       <ul>
-        {teams.map((team) => (
+        {/* {teams.map((team) => (
           <li key={team.id}>
             <Teams teams={team} />
           </li>
+        ))} */}
+        {teams.map((team) => (
+          <Link key={team.id} to={`/teams/${team.id}`}>
+            {team.name}
+          </Link>
         ))}
       </ul>
     </div>

@@ -16,16 +16,16 @@ function App() {
           <NavLink to="/teams">Teams</NavLink>
         </header>
         <Switch>
-          <Route path="/players"></Route>
-
           <Route path="/players/:id"></Route>
 
-          <Route path="/teams">
-            <TeamList />
-          </Route>
+          <Route exact path="/players"></Route>
 
           <Route path="/teams/:id">
             <TeamDetail />
+          </Route>
+
+          <Route exact path="/teams">
+            <TeamList />
           </Route>
 
           <Route exact path="/">
