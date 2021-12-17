@@ -1,9 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Teams() {
+export default function Teams({ teams }) {
   return (
-    <div>
-      <h1>this is a test</h1>
-    </div>
+    <section>
+      {teams.map((team) => (
+        <div key={team.id}>
+          <Link to="/teams/:id">
+            <div className="content">
+              <h1>{team.name}</h1>
+            </div>
+          </Link>
+        </div>
+      ))}
+    </section>
   );
 }

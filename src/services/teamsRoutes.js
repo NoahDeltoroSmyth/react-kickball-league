@@ -9,3 +9,5 @@ export async function fetchTeams() {
   const data = await resp.json();
   return data;
 }
+
+//When dealing with unexpected token at < json position 0 check url and keys, restart server, log response to see what's coming thru.
