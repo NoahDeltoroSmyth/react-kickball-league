@@ -2,12 +2,16 @@ import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import './App.css';
 import Home from './Views/Home/Home';
 import TeamList from './Views/Teams/TeamList';
+import TeamDetail from './Views/Teams/TeamDetail';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <header className="header">
+          <NavLink to="/" exact>
+            Home
+          </NavLink>
           <NavLink to="/players">Players</NavLink>
           <NavLink to="/teams">Teams</NavLink>
         </header>
@@ -20,7 +24,9 @@ function App() {
             <TeamList />
           </Route>
 
-          <Route path="/teams/:id"></Route>
+          <Route path="/teams/:id">
+            <TeamDetail />
+          </Route>
 
           <Route exact path="/">
             <Home />

@@ -6,7 +6,7 @@ export default function Teams({ teams }) {
     <section>
       {teams.map((team) => (
         <div key={team.id}>
-          <Link to="/teams/:id">
+          <Link to={`/teams/${team.id}`}>
             <div className="content">
               <h1>{team.name}</h1>
             </div>
