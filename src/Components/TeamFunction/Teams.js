@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Teams({ teams }) {
+export default function Teams({ teams: { id, name, city, state }, showDetails = false }) {
   return (
-    <section>
-      {teams.map((team) => (
-        <div key={team.id}>
-          <Link to={`/teams/${team.id}`}>
-            <div className="content">
-              <h1>{team.name}</h1>
-            </div>
-          </Link>
+    <section className="content">
+      <Link to={`/teams/${id}`}>
+        <div>
+          <h1>{name}</h1>
         </div>
-      ))}
+        {showDetails && (
+          <div>
+            <h3>{city}</h3>
+            <h3>{state}</h3>
+          </div>
+        )}
+      </Link>
     </section>
   );
 }

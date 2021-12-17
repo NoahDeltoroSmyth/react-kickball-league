@@ -17,7 +17,13 @@ export default function TeamList() {
 
   return (
     <div>
-      <Teams teams={teams} />
+      <ul>
+        {teams.map((team) => (
+          <li key={team.id}>
+            <Teams teams={team} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
