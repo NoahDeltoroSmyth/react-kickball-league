@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import Teams from '../../Components/TeamFunction/Teams';
+// import Teams from '../../Components/TeamFunction/Teams';
 import { getTeamsById } from '../../services/teamsRoutes';
 
 export default function TeamDetail() {
