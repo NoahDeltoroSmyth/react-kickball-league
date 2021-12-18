@@ -10,24 +10,25 @@ export default function TeamList() {
     const fetchData = async () => {
       const data = await fetchTeams();
       setTeams(data);
+      // console.log(data);
     };
     fetchData();
   }, []);
 
   return (
-    <div>
-      <ul>
-        {/* {teams.map((team) => (
+    <div className="teams-list">
+      {/* <ul> */}
+      {/* {teams.map((team) => (
           <li key={team.id}>
             <Teams teams={team} />
           </li>
         ))} */}
-        {teams.map((team) => (
-          <Link key={team.id} to={`/teams/${team.id}`}>
-            {team.name}
-          </Link>
-        ))}
-      </ul>
+      {teams.map((team) => (
+        <Link className="teams" key={team.id} to={`/teams/${team.id}`}>
+          {team.name}
+        </Link>
+      ))}
+      {/* </ul> */}
     </div>
   );
 }

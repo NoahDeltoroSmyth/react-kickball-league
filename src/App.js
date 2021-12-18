@@ -14,7 +14,9 @@ function App() {
           <NavLink to="/" exact>
             Home
           </NavLink>
-          <NavLink to="/players">Players</NavLink>
+          <NavLink className="player-link" to="/players">
+            Players
+          </NavLink>
           <NavLink to="/teams">Teams</NavLink>
         </header>
         <Switch>

@@ -18,15 +18,17 @@ export default function TeamDetail() {
   }, [id]);
   // if (loading) return <h1>loading</h1>;
   return (
-    <div>
+    <section className="team-detail">
       {/* {teams.map((team) => (
         <li key={team}>
           <Teams teams={teams} />
         </li>
       ))} */}
-      {teams.name}
-      {teams.city},{teams.state}
-    </div>
+      <div className="team-name">name: {teams.name}</div>
+      <div className="team-city">
+        city: {teams.city}, {teams.state}
+      </div>
+    </section>
   );
 }
 {
