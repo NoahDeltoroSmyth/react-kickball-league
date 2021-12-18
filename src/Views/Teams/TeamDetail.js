@@ -6,18 +6,29 @@ import { getTeamsById } from '../../services/teamsRoutes';
 export default function TeamDetail() {
   const { id } = useParams();
   console.log(id);
-  const [team, setTeam] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [teams, setTeams] = useState([]);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getTeamsById(id).then(({ data }) => setTeam(data));
-    setLoading(false);
-    console.log(team);
-  }, []);
-  if (loading) return <h1>loading</h1>;
+    // const fetchData = async () => {
+    getTeamsById(id).then(({ data }) => setTeams(data));
+    // const data = await getTeamsById(props.match.params.id);
+    // setLoading(false);
+    // };
+  }, [id]);
+  // if (loading) return <h1>loading</h1>;
   return (
     <div>
-      <Teams teams={team} />
+      {/* {teams.map((team) => (
+        <li key={team}>
+          <Teams teams={teams} />
+        </li>
+      ))} */}
+      {teams.name}
+      {teams.city},{teams.state}
     </div>
   );
+}
+{
+  /* <Teams teams={team} /> */
 }
