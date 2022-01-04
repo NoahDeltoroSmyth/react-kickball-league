@@ -1,8 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render } from '@testing-library/react';
+import Players from '../src/Components/PlayerFunction/Players';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('page displays an h1 of a player name', () => {
+  const container = render(<h1>{Players}</h1>);
+  expect(container).toMatchSnapshot();
 });
