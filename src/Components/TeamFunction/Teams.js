@@ -1,12 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Teams({ team }) {
-  console.log(team);
+export default function Teams({ team: { name, city, state, players } }) {
   return (
-    <div>
-      <h1>{team.name}</h1>
-      <h3>{team.city}</h3>
-      <h3>{team.state}</h3>
-    </div>
+    <>
+      <div>
+        <h1>{name}</h1>
+        <h3>{city}</h3>
+        <h3>{state}</h3>
+      </div>
+      <div>
+        {players.map((player) => (
+          <Link className="players" key={player.id} to={`/players/${player.id}`}>
+            {player.name}
+          </Link>
+        ))}
+      </div>
+    </>
   );
 }

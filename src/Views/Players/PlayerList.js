@@ -9,7 +9,6 @@ export default function TeamList() {
     const fetchData = async () => {
       const data = await fetchPlayers();
       setPlayers(data);
-      //   console.log(data);
     };
     fetchData();
   }, []);
