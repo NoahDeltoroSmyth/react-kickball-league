@@ -8,7 +8,7 @@ test.skip('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test('page displays an h1 of a player name', () => {
+test.skip('page displays an h1 of a player name', () => {
   const container = render(<h1>{Players}</h1>);
   expect(container).toMatchSnapshot();
 });
